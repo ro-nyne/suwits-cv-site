@@ -1,22 +1,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&family=Kanit&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inconsolata', monospace;
+    scroll-behavior: smooth;
 }
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: #161623;
 }
-ul{
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f00,#f0f);
+    clip-path: circle(30% at right 70%);
+}
+body::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3,#e91e63);
+    clip-path: circle(20% at 10% 10%);
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.container .card{
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+.profile{
+    position: fixed;
+}
+.container .card .contents{
+    padding: 20px;
+    text-align: center;
+    /* animation */
+    transform: translateY(100px);
+    opacity: 0;
+    /* animation */
+    transition: 0.5s;
+}
+.container .card:hover .contents{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.container .card .contents h2{
+    position: absolute;
+    top: -80px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+.container .card .contents h3{
+    font-size: 1.8em;
+    color: white;
+    z-index: 1;
+}
+.container .card .contents p{
+    font-size: 1em;
+    color: white;
+    font-weight: 300;
+}
+.container .card .contents a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.social{
+    position: fixed;
+    padding: 10px 10px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.social ul{
     position: relative;
     display: flex;
     gap: 25px;
 }
-ul li{
+.social ul li{
     position: relative;
     list-style: none;
     width: 60px;
@@ -29,11 +130,11 @@ ul li{
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     transition: 0.5s;
 }
-ul li:hover{
+.social ul li:hover{
     width: 180px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
 }
-ul li::before{
+.social ul li::before{
     content: '';
     position: absolute;
     inset: 0;
@@ -42,10 +143,10 @@ ul li::before{
     opacity: 0;
     transition: 0.5s;
 }
-ul li:hover::before{
+.social ul li:hover::before{
     opacity: 1;
 }
-ul li::after{
+.social ul li::after{
     content: '';
     position: absolute;
     top: 10px;
@@ -58,24 +159,24 @@ ul li::after{
     z-index: -1;
     filter: blur(15px);
 }
-ul li:hover::after{
+.social ul li:hover::after{
     opacity: 0.5;
 }
-ul li i{
+.social ul li i{
     color: #777;
     font-size: 1.75em !important;
     transition: 0.5s;
     transition-delay: 0.25s;
 }
-ul li:hover i{
+.social ul li:hover i{
     transform: scale(0);
     font-size: 1.75em;
     transition-delay: 0.25s;
 }
-ul li span{
+.social ul li span{
     position: absolute;
 }
-ul li .titulo{
+.social ul li .titulo{
     color: #fff;
     font-size: 1.1em !important;
     text-transform: uppercase;
@@ -84,21 +185,51 @@ ul li .titulo{
     transition: 0.5s;
     transition-delay: 0s;
 }
-ul li:hover .titulo{
+.social ul li:hover .titulo{
     transform: scale(1);
     transition-delay: 0.25s;
 }
-.zoom-wrapper{
-    margin: 1em;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 16px;
-}
-.zoom-wrapper img{
-    object-fit: cover;
-    transition: transform 0.8s;
+/* Add this to your existing CSS or styles.css */
+.popup {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease-in-out;
+    z-index: 1;
 }
-.zoom-wrapper:hover img{
-    transform: scale(1.5);
+.popup-content {
+    background-color: #fff;
+    border-radius: 25px;
+    width: 500px;
+    padding: 30px 50px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    transform-origin: center;
+}
+.popup .popup-content p{
+    margin: 17px;
+}
+.popup .popup-content p a{
+    font-weight: 700;
+    color: #2196f3;
+    text-decoration: none;
+}
+.popup .popup-content img{
+    display: flex;
+    top: 0;
+    left: 0;
+    margin: auto;
+    max-width: 30%;
+    height: auto;
+}
+.close-popup {
+    display: block;
+    float: right;
+    text-decoration: none;
+    color: #333;
 }
