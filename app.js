@@ -1,4 +1,4 @@
-// Function show popup
+// Function to show popups
 document.addEventListener("DOMContentLoaded", function () {
     const readMoreLinks = document.querySelectorAll(".read-more-link");
     const popups = document.querySelectorAll(".popup");
@@ -18,10 +18,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 // VanillaTilt
-VanillaTilt.init(document.querySelectorAll(".card"),{
+// Assuming you have VanillaTilt imported correctly in your HTML or using a module system
+VanillaTilt.init(document.querySelectorAll(".card"), {
     max: 25,
     speed: 400,
     glare: true,
     "max-glare": 1
 });
+
+// Scroll Event
+const progressEl = document.querySelector(".progress");
+window.onscroll = () => scrollProgress();
+
+function scrollProgress() {
+    const pageHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollPercentage = (scrollTop / pageHeight) * 100;
+    progressEl.style.visibility = "visible";
+    progressEl.style.width = scrollPercentage + '%'; // Corrected the typo here
+}
