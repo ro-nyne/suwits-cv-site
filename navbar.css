@@ -1,0 +1,38 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 400;
+}
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-list li {
+    list-style-type: none;
+    margin: 0 1.5rem;
+}
+.nav-list li a {
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+.nav-list li a::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+.nav-list li a:hover::before{
+    width: 100%;
+}

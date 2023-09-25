@@ -1,0 +1,48 @@
+/* scroll indicator */
+.scroll-indicator {
+    width: 100%;
+    height: 4px;
+    background: #eee;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    visibility: hidden;
+}
+.progress {
+    width: 0%;
+    height: 4px;
+    background: #2196f3;
+}
+/* scroll to top */
+.top{
+    background: transparent;
+    position: fixed;
+    padding: 10px 10px;
+    bottom: 2.5rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(10rem);
+    transition: all .3s;
+    color: #ff1414;
+}
+.top i::before{
+    transition: .2s;
+}
+.top i:hover::before{
+    font-size: 40px;
+    color: #ffffff;
+}
+.show-top-btn{
+    opacity: 1;
+    transform: translateY(0);
+}

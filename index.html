@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suwit Saiso - Personal Website</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3522/3522591.png">
+    <link rel="stylesheet" href="3d_card.css">
+    <link rel="stylesheet" href="Social.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="Popup.css">
+    <link rel="stylesheet" href="CardSlide.css">
+    <link rel="stylesheet" href="Scroll.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3076/3076404.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="stlye.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="scroll-indicator">
@@ -15,50 +25,40 @@
     <header>
         <div class="header-container">
             <nav>
-                <div class="logo">🖥️ Suwit Saiso</div>
+                <div class="logo">Suwit Saiso - Personal Website</div>
                 <ul class="nav-list">
-                    <li><a href="#education">Education</a></li>
                     <li><a href="#">Education</a></li>
-                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Interested</a></li>
+                    <li><a href="#">Resume</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-    <!-- Header Image -->
-    <section class="header"></section>
     
-    <!-- Contentes -->
     <!-- 3D Cards -->
-    <h1 style="padding: 20px;">Infomation Cards</h1>
-    <section class="3d-card">
-        <div class="container">
+    <section class="sec_container">
+        <div class="card_3d_container">
             <div class="card">
-                <div class="profile">
-                    <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="profile">
-                </div>
                 <div class="contents">
                     <h2>01</h2>
                     <h3>Hi, there</h3>
                     <p>Let me introduce myself a little bit. My name is Suwit Saiso and i'm studying in Computer Engineering.</p>
                     <a class="read-more-link" href="#">Read More</a>
+                    <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="profile">
                 </div>
             </div>
             <div class="card">
-                <div class="profile">
-                    <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="profile">
-                </div>
                 <div class="contents">
                     <h2>02</h2>
                     <h3>My Contact</h3>
-                    <p>Address: 66 Village No.1, Bantue       Sub-district, Lomsak District, Phetchabun 67110 </p>
+                    <p>Address: 66 Village No.1, Bantue Sub-district, Lomsak District, Phetchabun 67110 </p>
                     <a class="read-more-link" href="#">Read More</a>
+                    <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="profile">
                 </div>
             </div>
             <div class="card">
-                <div class="profile">
-                    <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="profile">
-                </div>
                 <div class="contents">
                     <h2>03</h2>
                     <h3>My interest</h3>
@@ -66,69 +66,47 @@
                         I'm interested in Artificial Intelligence and Game Developing
                     </p>
                     <a class="read-more-link" href="#">Read More</a>
+                    <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="profile">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education -->
-    <h1 id="education">Education</h1>
-    <section class="education">
-        <div class="container-box">
-            <h2 style="margin-bottom: 2rem;">Primary - High School</h2>
-            <div class="flex">
-                <img src="https://picsum.photos/400/250" alt="">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In inventore nemo dignissimos sed corrupti eius ad pariatur sapiente quos eaque enim animi iusto vitae tempore dolorum, alias aut libero eum. Recusandae reiciendis quas, explicabo eaque exercitationem laudantium? Praesentium nesciunt illo unde aliquid, quam in facere numquam libero voluptatem repudiandae dolore mollitia assumenda magnam neque. Obcaecati nisi voluptas vitae. Eum quis rerum fuga maxime cupiditate ducimus eaque, iste sapiente repellendus tenetur commodi temporibus explicabo perferendis quisquam impedit, sit corporis in illum, culpa et ut modi vitae architecto aliquam! Tempore quae ipsa ea iste saepe repellendus enim mollitia, hic veritatis officiis fuga amet? Natus veniam dolor temporibus unde consequatur doloremque accusamus illum maxime! Temporibus illum ab repellendus? Repellat veniam numquam eum tenetur?</p>
+    <section class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="card swiper-slide">
+                <div class="card_image">
+                    <img src="https://picsum.photos/1920/1080" alt="card Image">
+                </div>
+                <div class="card_content">
+                    <span class="card_title">Web Designer</span>
+                    <span class="card_name">Suwit Saiso</span>
+                    <p class="card_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima sed, soluta minus amet porro, blanditiis, facilis aliquam fugit illo animi sequi! Delectus qui odio optio et pariatur id atque.</p>
+                    <button class="card_btn">View More</button>
+                </div>
             </div>
-        </div>
-    </section>
-    <section id="education" class="education">
-        <div class="container-box">
-            <h2 style="margin-bottom: 2rem;">Bachelors Degrees</h2>
-            <div class="flex">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In inventore nemo dignissimos sed corrupti eius ad pariatur sapiente quos eaque enim animi iusto vitae tempore dolorum, alias aut libero eum. Recusandae reiciendis quas, explicabo eaque exercitationem laudantium? Praesentium nesciunt illo unde aliquid, quam in facere numquam libero voluptatem repudiandae dolore mollitia assumenda magnam neque. Obcaecati nisi voluptas vitae. Eum quis rerum fuga maxime cupiditate ducimus eaque, iste sapiente repellendus tenetur commodi temporibus explicabo perferendis quisquam impedit, sit corporis in illum, culpa et ut modi vitae architecto aliquam! Tempore quae ipsa ea iste saepe repellendus enim mollitia, hic veritatis officiis fuga amet? Natus veniam dolor temporibus unde consequatur doloremque accusamus illum maxime! Temporibus illum ab repellendus? Repellat veniam numquam eum tenetur?</p>
-                <img src="https://picsum.photos/400/250" alt="">
+            <div class="card swiper-slide">
+                <div class="card_image">
+                    <img src="https://picsum.photos/1920/1080" alt="card Image">
+                </div>
+                <div class="card_content">
+                    <span class="card_title">Web Designer</span>
+                    <span class="card_name">Suwit Saiso</span>
+                    <p class="card_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima sed, soluta minus amet porro, blanditiis, facilis aliquam fugit illo animi sequi! Delectus qui odio optio et pariatur id atque.</p>
+                    <button class="card_btn">View More</button>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Popup Sections -->
-    <section class="popup">
-        <div class="popup-content">
-            <h3>Hello, world 🌏</h3>
-            <p>I'm Suwit Saiso, a passionate and dedicated Computer Engineering student at <a href="https://www.nu.ac.th/" target="_blank">Naresuan University</a>. I have always been captivated by the limitless possibilities of technology and its power to transform the world we live in. With a strong foundation in computer engineering, I am on a journey to harness the potential of cutting-edge innovations and contribute to shaping the future of computing. My academic pursuits, coupled with hands-on experiences, drive my commitment to pushing the boundaries of what is possible in the world of technology. Join me on this exciting journey as we explore the realms of computer engineering and the boundless opportunities it offers."</p>
-            <img src="https://cdn-icons-png.flaticon.com/512/4185/4185714.png" alt="Studying">
-            <a class="close-popup" href="#">Close</a>
-        </div>
-    </section>
-    <section class="popup">
-        <div class="popup-content">
-            <h3>My Address</h3>
-            <p>66 Village No.1, Bantue Sub-district, Lomsak District, Phetchabun 67110 </p>
-            <h3>Phone number</h3>
-            <p>+66832098261</p>
-            <h3>E-mail Address</h3>
-            <p>
-                <ul>
-                    <li>tiffinz2545@gmail.com</li>
-                    <li>suwits.rn3319@gmail.com</li>
-                    <li>suwits64@nu.ac.th (My University Mail)</li>
-                </ul>
-            </p>
-            <h3>ID Line</h3>
-            <p>su.wit.2545 (or search with my phone number)</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Map_symbol_location_02.png" alt="pin-location">
-            <a class="close-popup" href="#">Close</a>
-        </div>
-    </section>
-    <section class="popup">
-        <div class="popup-content">
-            <h3>Why i am interested in Artificial Intelligence?</h3>
-            <p>I am deeply fascinated by Artificial Intelligence (AI) because it represents the forefront of technological innovation and its potential to revolutionize industries and improve our daily lives. AI has the remarkable ability to learn, adapt, and solve complex problems, and I am drawn to the endless possibilities it offers in fields like healthcare, finance, and autonomous systems. Moreover, the ethical implications surrounding AI development and its impact on society intrigue me, motivating me to explore how AI can be harnessed responsibly for the betterment of humanity.</p>
-            <h3>Why i am interested in Game Developing?</h3>
-            <p>I am passionately drawn to game development because it combines the art of creativity with the science of technology in a way that allows me to craft immersive experiences and bring imaginative worlds to life. Games have the unique power to engage, entertain, and challenge players, and as a game developer, I aspire to create experiences that evoke emotions and leave lasting memories. The process of designing gameplay mechanics, storytelling, and visual aesthetics fuels my creative drive, while the technical challenges of optimizing performance and creating interactive systems provide constant opportunities for learning and growth. Game development is not just a profession but a canvas where I can blend my artistic vision with technical expertise to craft interactive masterpieces that captivate and inspire players.</p>
-            <img src="https://cutewallpaper.org/24/game-png/game-2f573-controller-c72bb-free-9afe3-technology-73183-icons.png" alt="Game-controller">
-            <a class="close-popup" href="#">Close</a>
+            <div class="card swiper-slide">
+                <div class="card_image">
+                    <img src="https://picsum.photos/1920/1080" alt="card Image">
+                </div>
+                <div class="card_content">
+                    <span class="card_title">Web Designer</span>
+                    <span class="card_name">Suwit Saiso</span>
+                    <p class="card_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima sed, soluta minus amet porro, blanditiis, facilis aliquam fugit illo animi sequi! Delectus qui odio optio et pariatur id atque.</p>
+                    <button class="card_btn">View More</button>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -150,16 +128,44 @@
                         <span class="titulo">linkedin</span>
                     </li>
                     <li style="--i:#ffa9c6;--j:#f434e2;" onclick="window.open('https://instagram.com/ssuwittt?igshid=MzRlODBiNWFlZA==')">
-                    <span class="icon"><i class="fa fa-instagram"></i></span>
-                    <span class="titulo">instagram</span>
+                        <span class="icon"><i class="fa fa-instagram"></i></span>
+                        <span class="titulo">instagram</span>
                     </li>
                 </ul>
             </div>
         </section>
+        <button class="top">
+            <div>
+                <i class="fa fa-arrow-up"></i>
+            </div>
+        </button>
     </footer>
 
-    <!-- Scripts Here -->
+    <!-- Vanilla-tilt -->
     <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script  type="text/javascript" src="app.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 300,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
 </body>
 </html>

@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // VanillaTilt
 // Assuming you have VanillaTilt imported correctly in your HTML or using a module system
-VanillaTilt.init(document.querySelectorAll(".card"), {
+VanillaTilt.init(document.querySelectorAll(".sec_container .card_3d_container .card"), {
     max: 25,
     speed: 400,
     glare: true,
@@ -39,3 +39,39 @@ function scrollProgress() {
     progressEl.style.visibility = "visible";
     progressEl.style.width = scrollPercentage + '%'; // Corrected the typo here
 }
+
+const scrollBtn = document.querySelector(".top")
+const rootEl = document.documentElement
+document.addEventListener("scroll",showBtn)
+scrollBtn.addEventListener("click",scrollToTop)
+
+function showBtn(){
+    const scrollTotal = rootEl.scrollHeight - rootEl.clientHeight
+    if(rootEl.scrollTop/scrollTotal > .3){
+        scrollBtn.classList.add("show-top-btn")
+    }
+    else{
+        scrollBtn.classList.remove("show-top-btn")
+    }
+}
+
+function scrollToTop(){
+    rootEl.scrollTo({
+        top:0,
+        behavior:"smooth"
+    })
+}
+
+var swiper = new swiper("slider-content", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
