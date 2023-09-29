@@ -363,90 +363,6 @@ section {
     border-style: solid;
 }
 
-/* Play Button */
-
-#video-section {
-    position:relative;
-}
-
-.play-video {
-    height:110px;
-    position:absolute;
-    top:50%;
-    margin-top:-110px;
-    width:100%;
-}
-
-.play-icon {
-    display: inline-block;
-    font-size: 0px;
-    cursor: pointer;
-    margin: 45px auto;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.play-icon:after {
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    content: '';
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-}
-
-.play-icon:before {
-    font-family: 'fontawesome';
-    content: '\f144';
-    speak: none;
-    font-size: 74px;
-    line-height: 110px;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    display: block;
-    -webkit-font-smoothing: antialiased;
-    color:#202020;
-}
-
-.play-video .play-icon {
-    background: rgba(255, 255, 255, 0.5);
-    -webkit-transition: -webkit-transform ease-out 0.3s, background 0.4s;
-    -moz-transition: -moz-transform ease-out 0.3s, background 0.4s;
-    transition: transform ease-out 0.3s, background 0.4s;
-}
-
-.play-video .play-icon:after {
-    top: 0;
-    left: 0;
-    padding: 0;
-    z-index: -1;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-}
-
-.play-video .play-icon:hover {
-    background: rgba(255, 255, 255, 0.05);
-    -webkit-transform: scale(0.93);
-    -moz-transform: scale(0.93);
-    -ms-transform: scale(0.93);
-    transform: scale(0.93);
-    color: #202020;
-}
-
-
 /* --------- 2.4 Navigation ---------- */
 
 #header {
@@ -948,6 +864,7 @@ blockquote {
 /* --------- 6.4 certificates ---------- */
 
 #certificates img {
+    /* border-radius: 20px; */
     max-height: 300px;
 }
 
@@ -985,7 +902,7 @@ blockquote {
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     transition: all .2s linear;
-    vertical-align: middle;
+    /* vertical-align: middle; */
 }
 
 #certificates a:hover:before {
@@ -1087,7 +1004,7 @@ blockquote {
         /* styling */
         cursor: pointer;
         text-align: center;
-        color: #202020;
+        color: #fff;
         font-family: "fontawesome";
         font-size: 22px;
         opacity: 0.5;
@@ -1178,7 +1095,7 @@ blockquote {
 
         /* center vertically */
         margin-top: -40px;
-        color: #202020;
+        color: #fff;
         font-style: normal;
         font-weight: normal;
         -webkit-transition: all 0.3s ease-out;
@@ -1244,115 +1161,10 @@ blockquote {
     }
 }
 
-/* --------- 6.5 Video ---------- */
+/* --------- 6.5 Slider Cards ---------- */
 
-#video-box {
-    color:#202020;
-    position:relative;
-    overflow:hidden;
-    text-align:center;
-}
-
-.video_container, .easyContainer {
-    position: relative;
-    padding-bottom: 56.25%; /* 16/9 ratio */
-    margin: 0;
-    padding-top: 0; /* IE6 workaround*/
-    height: 0;
-    overflow: hidden;
-}
-
-.video_container iframe, .video_container object, .video_container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.slvj-lightbox iframe, .slvj-lightbox object, .slvj-lightbox embed {
-    width: 100% !important;
-    height: 529px !important;
-}
-
-.videojs-background-wrap {
-    overflow: hidden;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: -998;
-}
-
-#slvj-window {
-    width: 100%;
-    min-height: 100%;
-    z-index: 9999999999;
-    background: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-#slvj-window,
-#slvj-window * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-#slvj-background-close {
-    width: 100%;
-    min-height: 100%;
-    z-index: 31;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-#slvj-back-lightbox {
-    max-width: 940px;
-    max-height: 529px;
-    z-index: 32;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.slvj-lightbox {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    z-index: 53;
-}
-
-#slvj-close-icon:before {
-    font-family: "fontawesome";
-    color: #202020;
-    content: '\f00d';
-    font-size: 22px;
-    opacity: 0.5;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-    z-index: 99999;
-    height: 22px;
-    width: 22px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-}
-
-#slvj-close-icon:before:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-
-/* --------- 6.6 Slider Cards ---------- */
-
-#projects a {
+#projects a,
+#resume a {
     display: block;
     text-align: center;
     position: relative;
@@ -1361,7 +1173,8 @@ blockquote {
     color: #202020;
 }
 
-#projects img {
+#projects img,
+#resume img{
     display: inline-block;
     padding: 15px 25px;
 }
@@ -1383,7 +1196,7 @@ blockquote {
 }
 
 #projects a:hover .client-overlay,
-#resume a:hover .client-overlay {
+#resume a:hover .client-overlay{
     opacity: 1;
 }
 
@@ -1396,7 +1209,180 @@ blockquote {
     display: inline-block;
 }
 
-/* --------- 6.7 Education Table ---------- */
+/* Slider Cards */
+
+.swiper-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+    color: #d2b356;
+    font-weight: 1000;
+}
+
+.swiper-pagination-bullet{
+    background-color: #d2b356;
+}
+
+.swiper{
+    width: 100%;
+}
+    
+.swiper-wrapper{
+    width: 100%;
+    height: 35em;
+    display: flex;
+    align-items: center;
+}
+    
+.swiper-wrapper .card{
+    width: 20em;
+    height: 90%;
+    background-color: #333;
+    border-radius: 2em;
+    box-shadow: 0 0 2em rgba(0, 0, 0, .2);
+    padding: 2em 1em;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    margin: 0 2em;
+}
+    
+.swiper-slide:not(.swiper-slide-active){
+    filter: blur(1px);
+}
+    
+.card_image{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 5px solid #d2b356;
+    padding: 3px;
+    margin-bottom: 2em;
+}
+    
+.card_image img{
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+    
+.card_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+    
+.card_title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    top: .2em;
+}
+    
+.card_name{
+    color: #4682A9;
+}
+    
+.card_text{
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 1em 0;
+}
+    
+.card_btn{
+    background-color: #d2b356;
+    color: #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    padding: .5em;
+    border-radius: 2em;
+    margin-top: .5em;
+    cursor: pointer;
+}
+
+/* --------- 3D Card --------- */
+.card_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.card_container .card{
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+}
+.card_container .card .contents{
+    padding: 20px;
+    text-align: center;
+    /* animation */
+    transform: translateY(100px);
+    opacity: 0;
+    transition: .5s;
+}
+.card_container .card:hover .contents{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.card_container .card .contents h2{
+    position: absolute;
+    top: -80px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255, 255, 255, .05);
+    pointer-events: none;
+}
+.card_container .card .contents h3{
+    font-size: 1.8em;
+    color: #fff;
+    z-index: 1;
+}
+.card_container .card .contents p{
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
+.card_container .card .contents a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: #333;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+.card_container .card .img{
+    position: fixed;
+}
+
+/* --------- 6.6 Education Table ---------- */
 
 .education-block-content {
     background: #202020;
@@ -1463,7 +1449,17 @@ blockquote {
     margin:0;
 }
 
-
+/* Files Dowload */
+.download_container{
+    margin-top: 2em;
+    text-align: center;
+    padding: 0 1em 0 1em;
+    border-radius: 2em;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /*------------------------------------------------------------------------------------------*/
 /* 7. Footer */
@@ -1535,8 +1531,8 @@ blockquote {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     bottom: 0;
+    right: 0;
     background-color: #202020; /* change if the mask should have another color then white */
     z-index: 99999; /* makes sure it stays on top */
 }
@@ -2135,10 +2131,6 @@ blockquote {
         padding-bottom: 25px;
     }
 
-    /* Video */
-    .slvj-lightbox iframe, .slvj-lightbox object, .slvj-lightbox embed {
-        height: 270px !important;
-    }
 
     /* Footer */
     #landing-footer #copyright {
@@ -2230,11 +2222,6 @@ blockquote {
 
     /*-----------------Sections-----------------*/
 
-    /* Video */
-    .slvj-lightbox iframe, .slvj-lightbox object, .slvj-lightbox embed {
-        height: 370px !important;
-    }
-
     /* Footer */
     #landing-footer #copyright {
         float: left;
@@ -2290,13 +2277,6 @@ blockquote {
         margin-right: -40px;
         padding-left: 20px;
         padding-right: 20px;
-    }
-
-    /*-----------------Sections-----------------*/
-
-    /* Video */
-    .slvj-lightbox iframe, .slvj-lightbox object, .slvj-lightbox embed {
-        height: 432px !important;
     }
 
 }
